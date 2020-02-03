@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>IME Lucky Draw</title>
+	<!--  libraries -->
+	<script src="js/lib/jquery-v1.8.2.js"></script>
+	<script src="js/lib/underscore-v1.5.2.js"></script>
+	<script src="js/lib/backbone-v0.9.2.js"></script>
+	<script src="js/lib/backbone-localstorage.js"></script>
+	<script src="js/lib/confetti.min.js"></script>
+
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="img/ime-logo.png">
+</head>
+<body>
+<!--<img id="banner" src="img/banner pix.jpg"/>-->
+<div id="outer-container">
+	<span class="num-entries"></span>
+
+	<div id="entry-container">
+		<div class="sub-title">Enter the names to be in the lucky draw!</div>
+		<input id="name-input" type="text" placeholder="enter a name or upload file..."/>
+		<div id="name-list-container">
+			<ul class="name-list left">
+			</ul>
+			<ul class="name-list right">
+			</ul>
+		</div>
+	</div>
+	<div id="winner-container" class="hidden">
+		<div class="sub-title">Randomly selecting a name...are you the lucky one?</div>
+		<div id="selecting-name"></div>
+	</div>
+	<div id="file-trigger" class="hidden-trigger">file upload</div>
+	<div id="file-area">
+		<input type="file" id="file-input" name="file-input"/>
+		<div id="file-sample"></div>
+		<input type="button" id="file-submit" value="Submit entries"/>
+	</div>
+	<div id="pick-winner" class="hidden-trigger">pick a winner</div>
+	<div id="clear-all-safety" class="hidden-trigger">clear all</div>
+</div>
+
+<!-- Templates -->
+<script type="text/template" id="name-entry-template">
+    <div class="row">
+	    <div class="icon-font remove"></div>
+	    <div class="name"><%- name %></div>
+    </div>
+</script>
+
+<script type="text/template" id="name-winner-template">
+    <div class="icon-font remove"></div>
+    <div class="name"><%- name %></div>
+</script>
+</body>
+</html>
